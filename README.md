@@ -10,14 +10,14 @@
 
 See: [https://www.mql5.com/ja/docs/integration/python_metatrader5](https://www.mql5.com/ja/docs/integration/python_metatrader5)
 
-# 必要なもの
+### 必要なもの
 
 - OANDA MT5のアカウント
 - OANDA Meta Trader 5
 - OSはWindows10, Python(3.9.12にて開発検証)
 - 取引資金
 
-# セットアップと実行
+### セットアップと実行
 
 ```
 python -m virtualenv vmql5
@@ -38,7 +38,7 @@ cp robots/.env.sample robots/.env
 python main.py
 ```
 
-# 問題があった場合
+### 問題があった場合
 
 [https://www.mql5.com/en/docs/constants/errorswarnings/enum_trade_return_codes](https://www.mql5.com/en/docs/constants/errorswarnings/enum_trade_return_codes)
 
@@ -46,8 +46,10 @@ python main.py
 ### よくあるエラー
 
 - order_send failed, retcode=10027　-> MT5Traderで「アルゴリズム取引」を有効にする
+- order_send failed, retcode=10030　-> 証拠金不足
 
-# 開発手順
+### 開発手順
 
 formatter --- black
+
 linter --- flake8
