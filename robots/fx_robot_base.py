@@ -8,7 +8,7 @@ logger = logging.getLogger('robots.fx_robot_base')
 
 
 class FxRobotBase:
-    def __init__(self, symbol="USDJPY"):
+    def __init__(self, symbol="AUDJPY"):
         self.mt5 = mt5
         self.logger = logging.getLogger('robots.fx_robot_base.FxRobotBase')
         # MetaTrader 5パッケージについてのデータを表示する

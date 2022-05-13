@@ -23,7 +23,7 @@ if __name__ == "__main__":
     bot_scheduler = schedule.Scheduler()
 
     job()
-    bot_scheduler.every(30).minutes.do(job)
+    bot_scheduler.every(10).minutes.do(job)
 
     while True:
         bot_scheduler.run_pending()

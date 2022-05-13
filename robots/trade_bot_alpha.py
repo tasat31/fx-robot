@@ -125,13 +125,14 @@ class TradeBotAlpha(FxRobotBase):
             "volume": self.lot,
             "type": self.order_type,
             "price": price,
+            "stoplimit": price,
             "sl": sl_price,
             "tp": tp_price,
             "deviation": self.deviation,
             "magic": 234000,
-            # "comment": "",
+            "comment": "",
             "type_time": mt5.ORDER_TIME_GTC,
-            "type_filling": mt5.ORDER_FILLING_RETURN,
+            "type_filling": mt5.ORDER_FILLING_IOC,
         }
 
         self.order_summary()
@@ -177,10 +178,10 @@ class TradeBotAlpha(FxRobotBase):
         tp_price = 0
 
         if order_type == mt5.ORDER_TYPE_BUY:
-            sl_price = price + 0.01
-            tp_price = price - 0.01
+            sl_price = price - 0.3
+            tp_price = price + 0.1
         else:
-            sl_price = price + 0.01
-            tp_price = price - 0.01
+            sl_price = price + 0.3
+            tp_price = price - 0.1
 
         return sl_price, tp_price
